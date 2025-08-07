@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+// Recursive function to print natural numbers
+void printNatural(int n) {
+    if (n == 0)
+        return;
+
+    printNatural(n - 1);  // Recursive call
+    printf("%d ", n);     // Print after recursion
+}
+
+int main() {
+    int n;
+
+    // Input
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    // Output
+    printf("Natural numbers from 1 to %d:\n", n);
+    printNatural(n);
+
+    return 0;
+}
