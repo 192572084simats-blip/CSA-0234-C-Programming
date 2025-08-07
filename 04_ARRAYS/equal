@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int arr1[100], arr2[100], n, i, isEqual = 1;
+
+    // Input the size of both arrays
+    printf("Enter the number of elements in the arrays: ");
+    scanf("%d", &n);
+
+    // Input elements for first array
+    printf("Enter %d elements for first array:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    // Input elements for second array
+    printf("Enter %d elements for second array:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    // Compare both arrays
+    for (i = 0; i < n; i++) {
+        if (arr1[i] != arr2[i]) {
+            isEqual = 0;  // Arrays are not equal
+            break;
+        }
+    }
+
+    // Display result
+    if (isEqual) {
+        printf("Both arrays are equal.\n");
+    } else {
+        printf("Arrays are not equal.\n");
+    }
+
+    return 0;
+}
