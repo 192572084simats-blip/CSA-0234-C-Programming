@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int num, multipleOf;
+
+    // Input the two numbers
+    printf("Enter the main number: ");
+    scanf("%d", &num);
+
+    printf("Enter the number to check multiple of: ");
+    scanf("%d", &multipleOf);
+
+    // Check for multiple
+    if (multipleOf == 0) {
+        printf("Cannot divide by zero.\n");
+    } else if (num % multipleOf == 0) {
+        printf("%d is a multiple of %d.\n", num, multipleOf);
+    } else {
+        printf("%d is NOT a multiple of %d.\n", num, multipleOf);
+    }
+
+    return 0;
+}
