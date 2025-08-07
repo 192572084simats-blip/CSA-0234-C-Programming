@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100], inv[100], n, i;
+
+    // Input size
+    printf("Enter the number of elements (as a permutation of 0 to n-1): ");
+    scanf("%d", &n);
+
+    // Input permutation array
+    printf("Enter %d elements (each between 0 and %d):\n", n, n - 1);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Create inverse array
+    for (i = 0; i < n; i++) {
+        inv[arr[i]] = i;
+    }
+
+    // Output inverse array
+    printf("Inverse array:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", inv[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
