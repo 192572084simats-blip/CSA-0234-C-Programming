@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+// Function to count odd and even using pointers
+void countOddEven(int *arr, int size, int *oddCount, int *evenCount) {
+    *oddCount = 0;
+    *evenCount = 0;
+
+    for (int i = 0; i < size; i++) {
+        if (*(arr + i) % 2 == 0)
+            (*evenCount)++;
+        else
+            (*oddCount)++;
+    }
+}
+
+int main() {
+    int arr[100], n, odd, even;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d integers:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Call function with array and address of odd/even counters
+    countOddEven(arr, n, &odd, &even);
+
+    printf("Number of Even elements: %d\n", even);
+    printf("Number of Odd elements: %d\n", odd);
+
+    return 0;
+}
