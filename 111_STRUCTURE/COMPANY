@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+// Define structure for Company
+struct Company {
+    char name[100];
+    char location[50];
+    int establishedYear;
+    int numEmployees;
+    float revenue;  // in crores or millions
+};
+
+int main() {
+    struct Company company1;
+
+    // Input company details
+    printf("Enter company name: ");
+    scanf(" %[^\n]", company1.name);
+
+    printf("Enter company location: ");
+    scanf(" %[^\n]", company1.location);
+
+    printf("Enter year of establishment: ");
+    scanf("%d", &company1.establishedYear);
+
+    printf("Enter number of employees: ");
+    scanf("%d", &company1.numEmployees);
+
+    printf("Enter annual revenue (in crores): ");
+    scanf("%f", &company1.revenue);
+
+    // Display company details
+    printf("\n--- Company Details ---\n");
+    printf("Name             : %s\n", company1.name);
+    printf("Location         : %s\n", company1.location);
+    printf("Established Year : %d\n", company1.establishedYear);
+    printf("Employees        : %d\n", company1.numEmployees);
+    printf("Revenue          : ₹%.2f crores\n", company1.revenue);
+
+    return 0;
+}
