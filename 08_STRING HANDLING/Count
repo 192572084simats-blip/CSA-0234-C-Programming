@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    char str[200];
+    int i = 0, chars = 0, words = 1, lines = 1;
+
+    printf("Enter a paragraph (end with ENTER):\n");
+    fgets(str, sizeof(str), stdin);
+
+    while (str[i] != '\0') {
+        // Count characters (excluding newline and null terminator)
+        if (str[i] != '\n' && str[i] != '\0')
+            chars++;
+
+        // Count words
+        if (str[i] == ' ' && str[i + 1] != ' ' && str[i + 1] != '\0' && str[i + 1] != '\n')
+            words++;
+
+        // Count lines
+        if (str[i] == '\n')
+            lines++;
+
+        i++;
+    }
+
+    printf("\nCharacter count: %d", chars);
+    printf("\nWord count: %d", words);
+    printf("\nLine count: %d\n", lines);
+
+    return 0;
+}
