@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int scores[100], rank[100];
+    int n, i, j;
+
+    // Input size
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+
+    // Input scores
+    printf("Enter the scores of %d students:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &scores[i]);
+    }
+
+    // Compute rank for each score
+    for (i = 0; i < n; i++) {
+        rank[i] = 1; // Start with rank 1
+
+        for (j = 0; j < n; j++) {
+            if (scores[j] > scores[i]) {
+                rank[i]++; // Increase rank if someone scored more
+            }
+        }
+    }
+
+    // Display scores and their ranks
+    printf("\nScore\tRank\n");
+    for (i = 0; i < n; i++) {
+        printf("%d\t%d\n", scores[i], rank[i]);
+    }
+
+    return 0;
+}
