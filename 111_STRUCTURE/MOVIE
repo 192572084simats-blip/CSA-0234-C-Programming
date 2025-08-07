@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+// Define structure for Movie
+struct Movie {
+    char title[100];
+    char director[50];
+    char genre[30];
+    int releaseYear;
+    float duration;  // in hours or minutes
+};
+
+int main() {
+    struct Movie movie1;
+
+    // Input movie details
+    printf("Enter movie title: ");
+    scanf(" %[^\n]", movie1.title);
+
+    printf("Enter director name: ");
+    scanf(" %[^\n]", movie1.director);
+
+    printf("Enter genre: ");
+    scanf(" %[^\n]", movie1.genre);
+
+    printf("Enter release year: ");
+    scanf("%d", &movie1.releaseYear);
+
+    printf("Enter duration (in hours): ");
+    scanf("%f", &movie1.duration);
+
+    // Display movie details
+    printf("\n--- Movie Details ---\n");
+    printf("Title       : %s\n", movie1.title);
+    printf("Director    : %s\n", movie1.director);
+    printf("Genre       : %s\n", movie1.genre);
+    printf("Release Year: %d\n", movie1.releaseYear);
+    printf("Duration    : %.2f hours\n", movie1.duration);
+
+    return 0;
+}
