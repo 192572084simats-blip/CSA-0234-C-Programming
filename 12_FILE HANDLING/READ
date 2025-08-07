@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    char ch;
+
+    // Open file in read mode
+    fp = fopen("data.txt", "r");
+
+    // Check if file exists
+    if (fp == NULL) {
+        printf("Error: Could not open file.\n");
+        return 1;
+    }
+
+    printf("Contents of the file:\n");
+
+    // Read characters one by one
+    while ((ch = fgetc(fp)) != EOF) {
+        putchar(ch);  // Display character on screen
+    }
+
+    fclose(fp);  // Close the file
+
+    return 0;
+}
