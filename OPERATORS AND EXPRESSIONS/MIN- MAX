@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int a, b;
+
+    // Input two numbers
+    printf("Enter first number (a): ");
+    scanf("%d", &a);
+
+    printf("Enter second number (b): ");
+    scanf("%d", &b);
+
+    // Find and print min and max
+    if (a > b) {
+        printf("\nMaximum = %d\n", a);
+        printf("Minimum = %d\n", b);
+    } else if (b > a) {
+        printf("\nMaximum = %d\n", b);
+        printf("Minimum = %d\n", a);
+    } else {
+        printf("\nBoth numbers are equal: %d\n", a);
+    }
+
+    return 0;
+}
